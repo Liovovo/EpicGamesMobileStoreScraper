@@ -1,13 +1,14 @@
 # EpicGamesLinkExtraction
 
-Epic Games 喜加一游戏的直达领取链接，链接可供用户直接通过网页端领取仅能通过移动端获取的免费游戏。
+Epic Games 喜加一游戏的直达领取链接思路，链接可供用户直接通过网页端领取仅能通过移动端获取的免费游戏。
+
 
 ## 链接结构分析
 Epic游戏购买链接格式：
 https://store.epicgames.com/purchase?&offers=1-[sandboxId]-[offerId]
 
 - `clientName=egs-android`：移动端标识，通常在请求时需要添加以访问移动端页面。
-- `offers`：游戏相关的唯一标识，由以下两部分组成：
+- `offers`：抓包移动端APP获取的游戏相关的标识：
   - `sandboxId`
   - `offerId`
 
