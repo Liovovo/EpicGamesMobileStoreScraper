@@ -1,0 +1,2 @@
+# EpicGamesLinkExtraction
+喜加一游戏直达链接提取思路，网页端领取手机独有喜加一游戏
