@@ -11,10 +11,11 @@ This project is a Python script that scrapes game information from the Epic Game
 
 ## Usage
 
-Run the script:
+Run the script (dependencies required):
 ```sh
 python epic_mobile.py
 ```
+Or download `epic_mobile.exe` from Releases and run.
 
 ## Dependencies
 - Python 3.x
