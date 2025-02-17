@@ -9,10 +9,12 @@
 
 ## 使用方法
 
-运行脚本：
+运行脚本（需要依赖）：
 ```sh
 python epic_mobile.py
 ```
+
+或直接从 Releases 下载打包好的 `epic_mobile.exe` 并运行.
 
 ## 依赖项
 - Python 3.x
