@@ -6,7 +6,7 @@ This project is a Python script that scrapes game information from the Epic Game
 
 ## Features
 - Retrieve a list of games from the Epic Games mobile store, including limited-time free games.
-- Allows users to specify country code and locale manually
+- Allow users to manually specify country code and language.
 - Generate game purchase links that can be accessed directly in a browser.
 
 ## Usage
