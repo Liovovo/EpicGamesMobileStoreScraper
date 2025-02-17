@@ -23,4 +23,4 @@ python epic_mobile.py
 - tabulate
 
 ## License
-MIT License
+GPL-3.0 license
