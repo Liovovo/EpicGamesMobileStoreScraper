@@ -20,5 +20,8 @@ python epic_mobile.py
 - cloudscraper
 - tabulate
 
+## Screenshot
+![screenshot01](https://github.com/user-attachments/assets/16992e39-aba2-46be-ad58-7585610a7723)
+
 ## 许可协议
 GPL-3.0 许可证
