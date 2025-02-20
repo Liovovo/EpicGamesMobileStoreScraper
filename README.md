@@ -11,9 +11,9 @@ This project is a Python script that scrapes game information from the Epic Game
 
 ## Free Games
 The following content may be outdated. **Last updated: February 20, 2025**
-- 《Dungeon of the Endless: Apogee》
+- 《Dungeon of the Endless: Apogee》  
 https://store.epicgames.com/purchase?&offers=1-6a99fb0a8add42c8b21c4ad25c928ba5-0fc96633957149ff8744aa1890145e2e
-- 《Bloons TD 6》
+- 《Bloons TD 6》  
 https://store.epicgames.com/purchase?&offers=1-6a8dfa6e441e4f2f9048a98776c6077d-c930e6f4d4e3420aad0241f45b0fea4b
 
 ## Usage
