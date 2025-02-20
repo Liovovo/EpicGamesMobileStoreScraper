@@ -2,7 +2,7 @@ English | [简体中文](./README.zh-CN.md)
 
 # Epic Games Mobile Store Scraper
 
-This project is a Python script that scrapes game information from the Epic Games mobile store and generates game purchase links that can be accessed directly in a browser.
+This project is a Python script that scrapes game information from the Epic Games mobile store and generates game purchase links that can be accessed directly in a browser. This is useful for iOS users outside the EU and those who do not want to download the mobile app.
 
 ## Features
 - Retrieve a list of games from the Epic Games mobile store, including limited-time free games.
