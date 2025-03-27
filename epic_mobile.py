@@ -13,8 +13,12 @@ logger = logging.getLogger(__name__)
 
 country = input("Enter country code (e.g., US): ").strip()
 locale = input("Enter locale (e.g., en-US): ").strip()
+platform = input("Enter platform (android/ios): ").strip().lower()
+while platform not in ["android", "ios"]:
+    print("Invalid platform. Please enter 'android' or 'ios'.")
+    platform = input("Enter platform (android/ios): ").strip().lower()
 
-API_URL = f"https://egs-platform-service.store.epicgames.com/api/v2/public/discover/home?count=10&country={country}&locale={locale}&platform=android&start=0&store=EGS"
+API_URL = f"https://egs-platform-service.store.epicgames.com/api/v2/public/discover/home?count=10&country={country}&locale={locale}&platform={platform}&start=0&store=EGS"
 
 HEADERS = {
     "User-Agent": "Ktor client",
@@ -81,8 +85,9 @@ def display_games(games):
     table = [[game["ID"], game["Game Name"], game["Category"], game["Original Price"], game["Discount"], game["Current Price"], game["Purchase Type"]] for game in games]
     print(tabulate(table, headers=headers, tablefmt="simple_outline"))
 
-def get_purchase_link(game):
-    return f"https://store.epicgames.com/purchase?&offers=1-{game['sandbox_id']}-{game['offer_id']}"
+def get_purchase_link(games):
+    offers = "&".join([f"offers=1-{game['sandbox_id']}-{game['offer_id']}" for game in games])
+    return f"https://store.epicgames.com/purchase?{offers}"
 
 if __name__ == "__main__":
     logger.info("Starting Epic Games Mobile Store Scraper...")
@@ -92,13 +97,14 @@ if __name__ == "__main__":
     display_games(games)
 
     while True:
-        user_input = input("Enter game ID (or 'q' to quit): ")
+        user_input = input("Enter game IDs separated by spaces (or 'q' to quit): ")
         if user_input.lower() == 'q':
             logger.info("User exited program")
             break
-        if user_input.isdigit() and int(user_input) < len(games):
-            game = games[int(user_input)]
-            logger.info(f"Fetching purchase link for {game['Game Name']}...")
-            print(f"Purchase Link: {get_purchase_link(game)}\n")
+        ids = [int(i) for i in user_input.split() if i.isdigit() and int(i) < len(games)]
+        if ids:
+            selected_games = [games[i] for i in ids]
+            logger.info("Fetching purchase links for selected games...")
+            print(f"Purchase Link: {get_purchase_link(selected_games)}\n")
         else:
             logger.warning("Invalid input, please try again.")
