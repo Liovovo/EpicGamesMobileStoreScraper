@@ -105,6 +105,7 @@ def get_free_games_links(platform_games):
 
 if __name__ == "__main__":
     logger.info("Starting Epic Games Mobile Store Scraper...")
+    logger.info("https://github.com/Liovovo/EpicGamesMobileStoreScraper")
     platform_games = {platform: parse_games(fetch_json(platform), platform) for platform in PLATFORMS}
     display_games(platform_games)
     input("\nPress Enter to display free game purchase links...")
